@@ -10,8 +10,8 @@
         active-text-color="#409eff"
       >
         <SideMenuItem
-          v-for="route in routes"
-          :key="route.path"
+          v-for="(route, index) in routes"
+          :key="route.name + index"
           :item="route"
           :base-path="route.path"
         />

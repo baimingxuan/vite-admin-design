@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import path from 'path'
+import { resolve } from 'path-browserify'
 import { isExternal } from '../../../utils/validate'
 import LinkItem from './LinkItem.vue'
 import Item from './Item.vue'
@@ -65,12 +65,8 @@ export default {
       if (isExternal(this.basePath)) {
         return this.basePath
       }
-      return path.resolve(this.basePath, routePath)
+      return resolve(this.basePath, routePath)
     }
   }
 }
 </script>
-
-<style lang="less">
-
-</style>

@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'Item',
-  functional: true,
+  // functional: true,
   props: {
     icon: {
       type: String,
