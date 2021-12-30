@@ -1,6 +1,6 @@
 <template>
   <span>
-    <i v-if="icon" :class="'icon' + icon" />
+    <i v-if="icon" :class="'icon ' + icon" />
     <span v-if="title" slot='title'>{{ title }}</span>
   </span>
 </template>
