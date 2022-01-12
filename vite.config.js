@@ -7,8 +7,7 @@ export default defineConfig(({command, mode}) => {
   const root = process.cwd()
   const viteEnv = loadEnv(mode, root)
 
-  const { VITE_PUBLIC_PATH, VUE_APP_BASE_API } = viteEnv
-  console.log(VUE_APP_BASE_API)
+  const { VITE_PUBLIC_PATH, VITE_APP_BASE_API } = viteEnv
   return {
     root,
     base: VITE_PUBLIC_PATH,
@@ -18,7 +17,7 @@ export default defineConfig(({command, mode}) => {
       cors: true,
       proxy: {
         '/user': {
-          target: 'http://42.194.194.178:3000',
+          target: VITE_APP_BASE_API,
           changeOrigin: true
         }
       }
